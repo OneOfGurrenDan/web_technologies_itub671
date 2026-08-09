@@ -1,55 +1,317 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Подборка из трёх книг о технологиях и мышлении — лабораторная работа по основам HTML.">
-    <title>Три книги, которые стоит прочитать</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zendesk — customer service software that builds better customer relationships.">
+  <title>Zendesk — Champions of Customer Service</title>
 </head>
 <body>
-    <header>
-        <h1>Три книги, которые стоит прочитать</h1>
-        <p>Небольшая подборка для лабораторной работы по основам HTML.</p>
-    </header>
+  <header>
+    <p class="utility-bar">
+      <a href="#">Sign in</a>
+      <a href="#">Product Support</a>
+      <a href="#">Company</a>
+      <a href="#">Contact us</a>
+      <span lang="en">English</span>
+    </p>
 
     <nav aria-label="Основная навигация">
+      <a href="/" class="logo">Zendesk</a>
+      <ul>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Demo</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+      <a href="#" class="button">Get started</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Champions of customer service</h1>
+      <p>
+        Zendesk makes customer service better. We build software to meet
+        customer needs, set your team up for success, and keep your business
+        in sync.
+      </p>
+      <p>
+        <a href="#" class="button button-primary">Free trial</a>
+        <a href="#" class="button button-secondary">View demo</a>
+      </p>
+      <figure>
+        <img src="images/hero-illustration.png" alt="Иллюстрация к разделу «Champions of customer service»" width="320" height="300">
+      </figure>
+    </section>
+
+    <section id="messaging" aria-labelledby="messaging-heading">
+      <figure>
+        <img src="images/messaging-team.png" alt="Команда поддержки отвечает клиентам через мессенджер" width="466" height="267">
+        <img src="images/messaging-app-preview.png" alt="Превью мобильного приложения с чатом поддержки" width="316" height="348">
+      </figure>
+      <h2 id="messaging-heading">Go all in on messaging</h2>
+      <p>
+        Cue the confetti—Zendesk messaging is here to help deliver rich
+        conversational experiences that are connected across your web,
+        mobile and social apps. It's easy to automate and fast to scale for
+        every customer need—and it's all part of our new <em>Zendesk Suite</em>.
+      </p>
+      <p>
+        <a href="#">Watch video</a>
+        <a href="#">Get the details</a>
+      </p>
+    </section>
+
+    <section id="conversations" aria-labelledby="conversations-heading">
+      <h2 id="conversations-heading">Where good conversations become great experiences</h2>
+      <p>
+        To make customers happy, you need conversational experiences—connected
+        communication across any channel.
+      </p>
+
+      <nav aria-label="Переключение раздела продукта">
         <ul>
-            <li><a href="#intro">О подборке</a></li>
-            <li><a href="#list">Список книг</a></li>
+          <li><a href="#">Sales</a></li>
+          <li><a href="#" aria-current="page">Service</a></li>
         </ul>
+      </nav>
+
+      <div class="conversations-content">
+        <div class="conversations-text">
+          <h3>Give customers the best support</h3>
+          <p>
+            Customers want to connect any time, any place. Meet them where
+            they are with the Zendesk Suite, which provides sophisticated,
+            seamless support that flows across channels.
+          </p>
+          <a href="#">Learn more</a>
+
+          <figure>
+            <blockquote>
+              <p>
+                “We're here to help our customers succeed online, and that's
+                something we hear back from our customers. They just love
+                our support channels.”
+              </p>
+            </blockquote>
+            <figcaption>
+              <strong>Raphael Fontes</strong><br>
+              Vice President of Customer Operations at Squarespace
+            </figcaption>
+          </figure>
+        </div>
+
+        <figure>
+          <img src="images/support-hero.png" alt="Специалист службы поддержки за работой" width="400" height="505">
+          <img src="images/support-app.png" alt="Скриншот интерфейса чата поддержки" width="350" height="360">
+        </figure>
+      </div>
+    </section>
+
+    <section id="customize" aria-labelledby="customize-heading">
+      <figure>
+        <img src="images/customize-banner.png" alt="Фоновая иллюстрация раздела Customize your customer experience" width="800" height="356">
+      </figure>
+      <h2 id="customize-heading">Customize your customer experience</h2>
+      <p>
+        Glowing just under the surface of Zendesk is a powerful force that
+        lets you connect and understand all of your customer data. Plus,
+        it's flexible and customizable, so you can adapt to anything thrown
+        your way. Zendesk Sunshine isn't faster than a speeding bullet, but
+        it's close.
+      </p>
+      <p>
+        <a href="#">Learn more</a>
+        <a href="#">Watch video</a>
+      </p>
+    </section>
+
+    <section id="highlights" aria-label="Новости и материалы">
+      <article>
+        <p class="eyebrow">New product offering</p>
+        <h3>Introducing the Zendesk Suite</h3>
+        <p>
+          Our new all-in-one customer service solution is easy to use,
+          convenient for customers, and scales with your business.
+        </p>
+        <a href="#">Learn more</a>
+      </article>
+
+      <article>
+        <p class="eyebrow">CX Champions</p>
+        <h3>Speed + quality = agility</h3>
+        <p>
+          How leading CX orgs support customer-centric processes and drive
+          business agility.
+        </p>
+        <a href="#">Read more</a>
+      </article>
+
+      <article>
+        <p class="eyebrow">CX Trends 2021</p>
+        <h3>New world, new CX</h3>
+        <p>
+          Last year, customer needs changed in a blink. Learn how your team
+          can keep up.
+        </p>
+        <a href="#">Read report</a>
+      </article>
+    </section>
+
+    <section id="award" aria-label="Награда от Gartner">
+      <p>#1 in Digital Customer Service use case by <strong>Gartner</strong></p>
+    </section>
+
+    <section id="customers" aria-labelledby="customers-heading">
+      <h2 id="customers-heading">The best customer experiences are built with Zendesk</h2>
+      <p>The companies you use, use Zendesk.</p>
+
+      <ul class="customer-photos">
+        <li><img src="images/customer-photo-1.png" alt="Клиент Zendesk 1" width="159" height="206"></li>
+        <li><img src="images/customer-photo-2.png" alt="Клиент Zendesk 2" width="300" height="389"></li>
+        <li><img src="images/customer-photo-3.png" alt="Клиент Zendesk 3" width="263" height="342"></li>
+      </ul>
+
+      <a href="#">See all customer stories</a>
+    </section>
+
+    <section id="blog" aria-labelledby="blog-heading">
+      <h2 id="blog-heading">There's more where that came from</h2>
+      <ol>
+        <li><a href="#">The complete guide to understanding customer service</a></li>
+        <li><a href="#">Zendesk update: staying safe and working for you</a></li>
+        <li><a href="#">3 customer service metrics that matter</a></li>
+        <li><a href="#">Most important customer service objectives</a></li>
+        <li><a href="#">Understanding machine learning vs deep learning</a></li>
+        <li><a href="#">Transitioning to a remote workforce</a></li>
+        <li><a href="#">The impact of COVID-19 on CX</a></li>
+        <li><a href="#">5 of the best knowledge management examples</a></li>
+      </ol>
+    </section>
+
+    <section id="cta-trial" aria-labelledby="cta-trial-heading">
+      <h2 id="cta-trial-heading">Champions of awesome free trials</h2>
+      <p>
+        <a href="#" class="button button-primary">Start a free trial</a>
+        <a href="#" class="button button-secondary">View demo</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Футер">
+      <div class="footer-column">
+        <h3>Our Products</h3>
+        <ul>
+          <li><a href="#">Zendesk for service</a></li>
+          <li><a href="#">Zendesk for sales</a></li>
+          <li><a href="#">Platform and APIs</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Product updates</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Top Features</h3>
+        <ul>
+          <li><a href="#">Ticketing system</a></li>
+          <li><a href="#">Messaging &amp; live chat</a></li>
+          <li><a href="#">Reporting &amp; analytics</a></li>
+          <li><a href="#">Voice</a></li>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Community forums</a></li>
+          <li><a href="#">Customer service software</a></li>
+          <li><a href="#">Ticketing system software</a></li>
+          <li><a href="#">Live chat software</a></li>
+          <li><a href="#">Knowledge base</a></li>
+          <li><a href="#">Forum software</a></li>
+          <li><a href="#">Help desk software</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Product support</a></li>
+          <li><a href="#">Request a demo</a></li>
+          <li><a href="#">The Library</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Webinars</a></li>
+          <li><a href="#">Customer Stories</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Diversity &amp; Inclusion</a></li>
+          <li><a href="#">Social Impact</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">System status</a></li>
+          <li><a href="#">Product help</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Favorite Things</h3>
+        <ul>
+          <li><a href="#">Zendesk for Enterprise</a></li>
+          <li><a href="#">Zendesk for Small Business</a></li>
+          <li><a href="#">Zendesk for Startups</a></li>
+          <li><a href="#">Zendesk Benchmark</a></li>
+          <li><a href="#">Gartner CRM Magic Quadrant</a></li>
+          <li><a href="#">Customer Experience Trends</a></li>
+        </ul>
+      </div>
     </nav>
 
-    <main>
-        <section id="intro">
-            <h2>О подборке</h2>
-            <p>
-                Эта страница демонстрирует базовую семантическую структуру HTML:
-                шапку сайта, навигацию, основной контент, разделы и подвал.
-                Ниже — три книги, с которых можно начать, если интересна тема технологий и мышления.
-            </p>
-        </section>
+    <hr>
 
-        <section id="list">
-            <h2>Список книг</h2>
-            <ol>
-                <li>
-                    <img src="https://placehold.co/120x160?text=Book+1" alt="Обложка книги «Чистый код»" width="120" height="160">
-                    <p><strong>«Чистый код»</strong> — Роберт Мартин. Классика о том, как писать понятный и поддерживаемый код.</p>
-                </li>
-                <li>
-                    <img src="https://placehold.co/120x160?text=Book+2" alt="Обложка книги «Думай медленно... решай быстро»" width="120" height="160">
-                    <p><strong>«Думай медленно... решай быстро»</strong> — Даниэль Канеман. О том, как на самом деле работает наше мышление.</p>
-                </li>
-                <li>
-                    <img src="https://placehold.co/120x160?text=Book+3" alt="Обложка книги «Атомные привычки»" width="120" height="160">
-                    <p><strong>«Атомные привычки»</strong> — Джеймс Клир. Практичная книга о том, как маленькие изменения складываются в результат.</p>
-                </li>
-            </ol>
-        </section>
-    </main>
+    <form action="#" method="post">
+      <h3>Enter the fold</h3>
+      <p>Subscribe to our newsletter.</p>
+      <label for="newsletter-email">Your email</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="What's your email?" required>
+      <button type="submit">Subscribe</button>
+    </form>
 
-    <footer>
-        <p>Лабораторная работа выполнена в рамках курса «Основы веб-технологий». <a href="https://github.com/OneOfGurrenDan/web_technologies_itub671">Репозиторий проекта на GitHub</a>.</p>
-    </footer>
+    <p class="legal-links">
+      <span>©Zendesk 2021</span>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </p>
+
+    <p class="disclaimer">
+      Gartner, Critical Capabilities for the CRM Customer Engagement Center,
+      8 June 2020, Nadine LeBlanc, Brian Manusama
+    </p>
+    <p class="disclaimer">
+      Gartner does not endorse any vendor, product or service depicted in
+      its research publications and does not advise technology users to
+      select only those vendors with the highest ratings or other
+      designations. Gartner research publications consist of the opinions
+      of Gartner's Research &amp; Advisory organization and should not be
+      construed as statements of fact. Gartner disclaims all warranties,
+      expressed or implied, with respect to this research, including any
+      warranties of merchantability or fitness for particular purpose.
+      GARTNER is a registered trademark and service mark of Gartner, Inc.
+      and/or its affiliates in the U.S. and internationally and is used
+      herein with permissions. All rights reserved.
+    </p>
+  </footer>
 </body>
 </html>
