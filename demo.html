@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sign up for a free Zendesk trial: registration form.">
-  <title>Sign up — Zendesk</title>
+  <meta name="description" content="CSS demo: gradients, 2D and 3D transforms, transitions.">
+  <title>CSS demo — Zendesk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
@@ -35,84 +35,94 @@
     </nav>
   </header>
 
-  <main class="form-page">
-    <section aria-labelledby="signup-heading">
-      <h1 id="signup-heading">Create your Zendesk account</h1>
-      <p class="lead">Start a free 14-day trial. Fields marked with <abbr title="required">*</abbr> are required.</p>
+  <main class="demo-page">
+    <section aria-labelledby="demo-heading">
+      <h1 id="demo-heading">CSS demo</h1>
+      <p class="lead">Examples of gradients, transforms and transitions used on this site. Hover over the cards in the last two sections.</p>
 
-      <form class="signup-form" action="https://httpbin.org/post" method="post">
-        <fieldset>
-          <legend>Personal information</legend>
-
-          <div class="field">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" placeholder="Ivan Petrov" autocomplete="name" minlength="2" required>
+      <h2>Gradients</h2>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box gradient-linear"></div>
           </div>
-
-          <div class="field">
-            <label for="birth-date">Date of birth</label>
-            <input type="date" id="birth-date" name="birth_date" min="1920-01-01" max="2012-12-31">
+          <h3>Linear gradient</h3>
+          <p><code>linear-gradient(135deg, #17494d, #ff6224)</code></p>
+        </article>
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box gradient-radial"></div>
           </div>
-
-          <fieldset class="choice">
-            <legend>Gender *</legend>
-            <div class="choice-item">
-              <input type="radio" id="gender-male" name="gender" value="male" required>
-              <label for="gender-male">Male</label>
-            </div>
-            <div class="choice-item">
-              <input type="radio" id="gender-female" name="gender" value="female">
-              <label for="gender-female">Female</label>
-            </div>
-          </fieldset>
-
-          <div class="field">
-            <label for="password">Password *</label>
-            <input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" aria-describedby="password-hint" required>
-            <p class="hint" id="password-hint">Use 8 or more characters with letters and numbers.</p>
+          <h3>Radial gradient</h3>
+          <p><code>radial-gradient(circle at 30% 30%, #fed6a8, #ff6224 60%, #03363d)</code></p>
+        </article>
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box gradient-conic"></div>
           </div>
-        </fieldset>
+          <h3>Conic gradient</h3>
+          <p><code>conic-gradient(from 90deg, #ff6224, #fed6a8, #d6eef2, #17494d, #ff6224)</code></p>
+        </article>
+      </div>
 
-        <fieldset>
-          <legend>Contact details</legend>
-
-          <div class="field">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+      <h2>2D transforms</h2>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box transform-rotate">rotate</div>
           </div>
-
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+7 999 123-45-67" autocomplete="tel" pattern="\+?[0-9\s\(\)\-]{10,20}">
+          <h3>Rotate</h3>
+          <p><code>transform: rotate(-12deg)</code></p>
+        </article>
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box transform-skew">skew</div>
           </div>
+          <h3>Skew, scale and translate</h3>
+          <p><code>transform: skewX(-15deg) scale(0.85) translateX(1rem)</code></p>
+        </article>
+      </div>
 
-          <fieldset class="choice">
-            <legend>Best time to contact you</legend>
-            <div class="choice-item">
-              <input type="checkbox" id="contact_time-morning" name="contact_time" value="morning">
-              <label for="contact_time-morning">Morning, 9–12</label>
+      <h2>3D transforms</h2>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="flip" tabindex="0">
+              <div class="flip-inner">
+                <div class="flip-face flip-front">Front</div>
+                <div class="flip-face flip-back">Back</div>
+              </div>
             </div>
-            <div class="choice-item">
-              <input type="checkbox" id="contact_time-afternoon" name="contact_time" value="afternoon">
-              <label for="contact_time-afternoon">Afternoon, 12–17</label>
-            </div>
-            <div class="choice-item">
-              <input type="checkbox" id="contact_time-evening" name="contact_time" value="evening">
-              <label for="contact_time-evening">Evening, 17–21</label>
-            </div>
-            <div class="choice-item">
-              <input type="checkbox" id="contact_time-night" name="contact_time" value="night">
-              <label for="contact_time-night">Night, 21–9</label>
-            </div>
-          </fieldset>
-        </fieldset>
+          </div>
+          <h3>Card flip</h3>
+          <p><code>perspective: 50rem; transform: rotateY(180deg); backface-visibility: hidden</code></p>
+        </article>
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box transform-tilt">3D</div>
+          </div>
+          <h3>Tilt in space</h3>
+          <p><code>transform: perspective(40rem) rotateX(25deg) rotateY(-30deg)</code></p>
+        </article>
+      </div>
 
-        <div class="form-actions">
-          <button type="submit" class="button button-primary"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><circle cx="9" cy="8" r="4"/><path d="M19 8v6M16 11h6"/></svg>Create account</button>
-          <button type="reset" class="button button-secondary"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>Clear form</button>
-          <button type="button" class="button button-secondary" disabled><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v7M14 20h3"/></svg>Sign up with QR code (soon)</button>
-        </div>
-      </form>
+      <h2>Transitions</h2>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="demo-box transition-color">hover me</div>
+          </div>
+          <h3>Color and scale</h3>
+          <p><code>transition: background-color 0.3s ease, transform 0.3s ease</code></p>
+        </article>
+        <article class="demo-card">
+          <div class="demo-stage">
+            <div class="progress" tabindex="0"><div class="progress-bar"></div></div>
+          </div>
+          <h3>Width with delay</h3>
+          <p><code>transition: width 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.2s</code></p>
+        </article>
+      </div>
     </section>
   </main>
 
