@@ -5,6 +5,8 @@
  *        positioning (relative, absolute, sticky) and z-index.
  * Lab 5: flexbox, colors (name, HEX, RGB(A), HSL(A)),
  *        relative units (rem, %, vh, ch) and file paths.
+ * Lab 6: images: SVG, WebP via <picture>, figure/figcaption,
+ *        object-fit and object-position.
  */
 
 :root {
@@ -89,6 +91,14 @@ img {
   border-radius: var(--radius-sm);
   height: auto;
   max-width: 100%;
+}
+
+picture {
+  display: block;
+}
+
+picture img {
+  width: 100%;
 }
 
 hr {
@@ -258,12 +268,12 @@ main > section {
   position: relative;
 }
 
-#messaging figure img:first-child {
+#messaging figure > :first-child {
   margin-top: 3.75rem;
   width: 75%;
 }
 
-#messaging figure img:last-child {
+#messaging figure > :last-child {
   position: absolute;
   right: 0;
   top: 0;
@@ -332,11 +342,11 @@ main > section {
   position: relative;
 }
 
-.conversations-content > figure img:first-child {
+.conversations-content > figure > :first-child {
   width: 70%;
 }
 
-.conversations-content > figure img:last-child {
+.conversations-content > figure > :last-child {
   bottom: 1.5rem;
   box-shadow: 0 8px 24px rgba(3, 54, 61, 0.2);
   position: absolute;
@@ -377,9 +387,15 @@ blockquote {
   z-index: 0;
 }
 
+#customize figure picture {
+  height: 100%;
+}
+
 #customize figure img {
   border-radius: 0;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
 }
 
@@ -463,10 +479,27 @@ blockquote {
   padding: 0;
 }
 
+.customer-photos figure {
+  margin: 0;
+}
+
 .customer-photos img {
   border-radius: var(--radius-sm);
   height: 16.25rem;
-  width: auto;
+  object-fit: cover;
+  object-position: center top;
+  width: 12.5rem;
+}
+
+.customer-photos figcaption {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.award-icon {
+  fill: var(--color-accent);
+  margin-right: 0.5rem;
+  vertical-align: -0.3em;
 }
 
 /* Blog list

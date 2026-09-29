@@ -48,14 +48,20 @@
         <a href="#" class="button button-secondary">View demo</a>
       </p>
       <figure>
-        <img src="images/hero-illustration.png" alt="Иллюстрация к разделу «Champions of customer service»" width="320" height="300">
+        <img src="images/hero-illustration.svg" alt="Иллюстрация: диалог клиента и оператора поддержки" width="320" height="300">
       </figure>
     </section>
 
     <section id="messaging" aria-labelledby="messaging-heading">
       <figure>
-        <img src="images/messaging-team.png" alt="Команда поддержки отвечает клиентам через мессенджер" width="466" height="267">
-        <img src="images/messaging-app-preview.png" alt="Превью мобильного приложения с чатом поддержки" width="316" height="348">
+        <picture>
+          <source srcset="images/messaging-team.webp" type="image/webp">
+          <img src="images/messaging-team.png" alt="Команда поддержки отвечает клиентам через мессенджер" width="466" height="267" loading="lazy" decoding="async">
+        </picture>
+        <picture>
+          <source srcset="images/messaging-app-preview.webp" type="image/webp">
+          <img src="images/messaging-app-preview.png" alt="Превью мобильного приложения с чатом поддержки" width="316" height="348" loading="lazy" decoding="async">
+        </picture>
       </figure>
       <div class="messaging-text">
         <h2 id="messaging-heading">Go all in on messaging</h2>
@@ -112,15 +118,24 @@
         </div>
 
         <figure>
-          <img src="images/support-hero.png" alt="Специалист службы поддержки за работой" width="400" height="505">
-          <img src="images/support-app.png" alt="Скриншот интерфейса чата поддержки" width="350" height="360">
+          <picture>
+            <source srcset="images/support-hero.webp" type="image/webp">
+            <img src="images/support-hero.png" alt="Специалист службы поддержки за работой" width="400" height="505" loading="lazy" decoding="async">
+          </picture>
+          <picture>
+            <source srcset="images/support-app.webp" type="image/webp">
+            <img src="images/support-app.png" alt="Скриншот интерфейса чата поддержки" width="350" height="360" loading="lazy" decoding="async">
+          </picture>
         </figure>
       </div>
     </section>
 
     <section id="customize" aria-labelledby="customize-heading">
       <figure>
-        <img src="images/customize-banner.png" alt="Фоновая иллюстрация раздела Customize your customer experience" width="800" height="356">
+        <picture>
+          <source srcset="images/customize-banner.webp" type="image/webp">
+          <img src="images/customize-banner.png" alt="" width="800" height="356" loading="lazy" decoding="async">
+        </picture>
       </figure>
       <h2 id="customize-heading">Customize your customer experience</h2>
       <p>
@@ -169,7 +184,12 @@
     </section>
 
     <section id="award" aria-label="Награда от Gartner">
-      <p>#1 in Digital Customer Service use case by <strong>Gartner</strong></p>
+      <p>
+        <svg class="award-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/>
+        </svg>
+        #1 in Digital Customer Service use case by <strong>Gartner</strong>
+      </p>
     </section>
 
     <section id="customers" aria-labelledby="customers-heading">
@@ -177,9 +197,33 @@
       <p>The companies you use, use Zendesk.</p>
 
       <ul class="customer-photos">
-        <li><img src="images/customer-photo-1.png" alt="Клиент Zendesk 1" width="159" height="206"></li>
-        <li><img src="images/customer-photo-2.png" alt="Клиент Zendesk 2" width="300" height="389"></li>
-        <li><img src="images/customer-photo-3.png" alt="Клиент Zendesk 3" width="263" height="342"></li>
+        <li>
+          <figure>
+            <picture>
+              <source srcset="images/customer-photo-1.webp" type="image/webp">
+              <img src="images/customer-photo-1.png" alt="Представитель компании-клиента 1" width="159" height="206" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Клиент 1: e-commerce</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <picture>
+              <source srcset="images/customer-photo-2.webp" type="image/webp">
+              <img src="images/customer-photo-2.png" alt="Представитель компании-клиента 2" width="300" height="389" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Клиент 2: финтех</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <picture>
+              <source srcset="images/customer-photo-3.webp" type="image/webp">
+              <img src="images/customer-photo-3.png" alt="Представитель компании-клиента 3" width="263" height="342" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Клиент 3: SaaS</figcaption>
+          </figure>
+        </li>
       </ul>
 
       <a href="#">See all customer stories</a>
