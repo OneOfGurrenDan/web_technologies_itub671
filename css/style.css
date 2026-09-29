@@ -9,6 +9,9 @@
  *        object-fit and object-position.
  * Lab 7: links (anchors, mailto, tel, between pages), forms,
  *        footer pinned to the bottom (form.html).
+ * Lab 8: pseudo-classes (:visited, :hover, :active, :focus,
+ *        :checked, :required, :invalid, :nth-child) and pseudo-elements
+ *        (::selection, ::placeholder, ::before, ::after).
  */
 
 :root {
@@ -91,9 +94,29 @@ a {
   text-decoration: none;
 }
 
+main a:visited:not(.button) {
+  color: hsl(186, 30%, 35%);
+}
+
 a:hover,
-a:focus {
+a:focus-visible {
   text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:not(.button):active {
+  color: var(--color-accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* выделение текста мышью */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 img {
@@ -140,9 +163,19 @@ ol {
 }
 
 .button:hover,
-.button:focus {
-  opacity: 0.9;
+.button:focus-visible {
+  opacity: 0.85;
   text-decoration: none;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.button:active {
+  opacity: 1;
+  transform: translateY(1px);
 }
 
 .button-secondary {
@@ -206,6 +239,31 @@ header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+header nav ul a {
+  display: inline-block;
+  position: relative;
+}
+
+header nav ul a::after {
+  background-color: var(--color-accent);
+  bottom: -0.25rem;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  width: 100%;
+}
+
+header nav ul a:hover {
+  text-decoration: none;
+}
+
+header nav ul a:hover::after,
+header nav ul a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .logo {
@@ -523,6 +581,7 @@ blockquote {
 
 #blog ol {
   column-gap: 3rem;
+  counter-reset: post;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -530,13 +589,33 @@ blockquote {
 }
 
 #blog li {
+  border-bottom: 1px solid var(--color-border);
+  counter-increment: post;
   flex: 1 1 calc(50% - 1.5rem);
   min-width: 17.5rem;
+  padding: 0.75rem 1rem;
 }
 
-#blog li {
-  border-bottom: 1px solid var(--color-border);
-  padding: 0.75rem 0;
+#blog li::before {
+  content: counter(post, decimal-leading-zero);
+  font-weight: 700;
+  margin-right: 0.75rem;
+}
+
+#blog li:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+#blog li:nth-child(odd)::before {
+  color: var(--color-accent);
+}
+
+#blog li:nth-child(even) {
+  background-color: hsla(189, 52%, 89%, 0.5);
+}
+
+#blog li:nth-child(even)::before {
+  color: var(--color-primary);
 }
 
 /* CTA
@@ -623,6 +702,7 @@ footer button {
   border: 0;
   border-radius: var(--radius-lg);
   color: var(--color-white);
+  cursor: pointer;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
 }
@@ -749,4 +829,69 @@ footer button {
 
 .icon {
   flex-shrink: 0;
+}
+
+/* Form states (Lab 8)
+   ========================================================================== */
+
+.field input::placeholder,
+footer input::placeholder {
+  color: hsl(206, 7%, 62%);
+  font-style: italic;
+}
+
+.field input:hover {
+  border-color: var(--color-text);
+}
+
+.field input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(23, 73, 77, 0.2);
+  outline: none;
+}
+
+/* обязательные поля: акцентная полоса слева */
+.field input:required {
+  border-left: 4px solid var(--color-accent);
+}
+
+/* ошибка показывается, только когда что-то уже введено */
+.field input:invalid:not(:placeholder-shown) {
+  border-color: hsl(0, 70%, 50%);
+  box-shadow: 0 0 0 3px hsla(0, 70%, 50%, 0.15);
+}
+
+.choice-item input {
+  accent-color: var(--color-accent);
+  cursor: pointer;
+  height: 1.125rem;
+  margin: 0;
+  width: 1.125rem;
+}
+
+.choice-item label {
+  cursor: pointer;
+}
+
+/* выбранные радиокнопки и чекбоксы: текст ярлыка выделен и вычеркнут */
+.choice-item input:checked + label {
+  color: var(--color-heading);
+  font-weight: 700;
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+}
+
+.choice-item input:focus-visible + label {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+footer button:hover,
+footer button:focus-visible {
+  opacity: 0.85;
+}
+
+footer button:active {
+  transform: translateY(1px);
 }
