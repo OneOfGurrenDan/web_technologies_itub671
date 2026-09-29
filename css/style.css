@@ -1,6 +1,8 @@
 /*
- * style.css — Lab 3: CSS basics
- * Google Fonts: Roboto (matches typography from the Figma mockup)
+ * style.css
+ * Lab 3: CSS basics. Google Fonts: Roboto (matches the Figma mockup).
+ * Lab 4: box model, sizes (width/height, min-/max-), overflow,
+ *        positioning (relative, absolute, sticky) and z-index.
  */
 
 :root {
@@ -15,6 +17,8 @@
   --color-white: #fff;
   --radius-sm: 4px;
   --radius-lg: 26px;
+  --content-width: 1120px;
+  --gutter: 24px;
 }
 
 /* Base
@@ -37,6 +41,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
+  min-width: 320px;
 }
 
 h1,
@@ -104,6 +109,7 @@ ol {
   color: var(--color-white);
   display: inline-block;
   font-weight: 700;
+  min-width: 160px;
   padding: 14px 28px;
   text-align: center;
   text-decoration: none;
@@ -126,8 +132,7 @@ ol {
   border-color: var(--color-accent);
 }
 
-#hero .button-secondary,
-#cta-trial .button-secondary {
+#hero .button-secondary {
   border-color: var(--color-white);
   color: var(--color-white);
 }
@@ -138,6 +143,9 @@ ol {
 header {
   background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .utility-bar {
@@ -160,7 +168,10 @@ header nav {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: space-between;
-  padding: 16px 24px;
+  margin: 0 auto;
+  max-width: var(--content-width);
+  min-height: 72px;
+  padding: 16px var(--gutter);
 }
 
 header nav ul {
@@ -177,13 +188,28 @@ header nav ul {
   font-weight: 900;
 }
 
+/* Sections: width of the content
+   ========================================================================== */
+
+main > section {
+  padding-left: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+  padding-right: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+}
+
 /* Hero
    ========================================================================== */
 
 #hero {
   background-color: var(--color-primary);
-  padding: 64px 24px;
+  min-height: 560px;
+  padding-bottom: 64px;
+  padding-top: 64px;
   text-align: center;
+}
+
+#hero figure {
+  margin: 32px auto 0;
+  max-width: 320px;
 }
 
 #hero h1,
@@ -202,7 +228,28 @@ header nav ul {
 
 #messaging {
   background-color: var(--color-bg-peach);
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+
+#messaging figure {
+  margin: 0 0 48px;
+  max-width: 640px;
+  min-height: 400px;
+  position: relative;
+}
+
+#messaging figure img:first-child {
+  margin-top: 60px;
+  width: 466px;
+}
+
+#messaging figure img:last-child {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 240px;
+  z-index: 1;
 }
 
 /* Conversations
@@ -210,7 +257,8 @@ header nav ul {
 
 #conversations {
   background-color: var(--color-bg-light);
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
 }
 
 #conversations nav ul {
@@ -242,6 +290,7 @@ header nav ul {
 
 .conversations-text {
   flex: 1 1 320px;
+  max-width: 440px;
 }
 
 #conversations figure {
@@ -250,6 +299,25 @@ header nav ul {
   border-radius: var(--radius-sm);
   margin: 0;
   padding: 24px;
+}
+
+.conversations-content > figure {
+  flex: 1 1 400px;
+  min-height: 560px;
+  position: relative;
+}
+
+.conversations-content > figure img:first-child {
+  width: 70%;
+}
+
+.conversations-content > figure img:last-child {
+  bottom: 24px;
+  box-shadow: 0 8px 24px rgba(3, 54, 61, 0.2);
+  position: absolute;
+  right: 24px;
+  width: 50%;
+  z-index: 2;
 }
 
 blockquote {
@@ -265,12 +333,46 @@ blockquote {
 #customize {
   background-color: var(--color-heading);
   color: var(--color-white);
-  padding: 64px 24px;
+  min-height: 420px;
+  overflow: hidden;
+  padding-bottom: 96px;
+  padding-top: 96px;
+  position: relative;
   text-align: center;
 }
 
-#customize h2 {
+#customize figure {
+  height: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+#customize figure img {
+  border-radius: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#customize h2,
+#customize p {
+  position: relative;
+  z-index: 1;
+}
+
+#customize h2,
+#customize a {
   color: var(--color-white);
+}
+
+#customize p:not(:last-child) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 720px;
 }
 
 /* Highlight cards
@@ -280,7 +382,8 @@ blockquote {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
 }
 
 #highlights article {
@@ -288,6 +391,7 @@ blockquote {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   flex: 1 1 280px;
+  min-height: 240px;
   padding: 24px;
 }
 
@@ -303,7 +407,8 @@ blockquote {
 
 #award {
   background-color: var(--color-bg-blue);
-  padding: 32px 24px;
+  padding-bottom: 32px;
+  padding-top: 32px;
   text-align: center;
 }
 
@@ -311,7 +416,8 @@ blockquote {
    ========================================================================== */
 
 #customers {
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
   text-align: center;
 }
 
@@ -326,6 +432,8 @@ blockquote {
 
 .customer-photos img {
   border-radius: var(--radius-sm);
+  height: 260px;
+  width: auto;
 }
 
 /* Blog list
@@ -333,11 +441,13 @@ blockquote {
 
 #blog {
   background-color: var(--color-bg-light);
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
 }
 
 #blog ol {
   list-style: none;
+  max-width: 800px;
   padding: 0;
 }
 
@@ -351,7 +461,8 @@ blockquote {
 
 #cta-trial {
   background-color: var(--color-bg-blue);
-  padding: 64px 24px;
+  padding-bottom: 64px;
+  padding-top: 64px;
   text-align: center;
 }
 
@@ -361,7 +472,15 @@ blockquote {
 footer {
   background-color: var(--color-heading);
   color: var(--color-bg-light);
-  padding: 48px 24px;
+  padding: 48px max(var(--gutter), calc((100% - var(--content-width)) / 2));
+}
+
+.footer-column {
+  min-width: 160px;
+}
+
+footer h3 {
+  color: var(--color-white);
 }
 
 footer nav {
