@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign up for a free Zendesk trial: registration form.">
+  <title>Sign up — Zendesk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <p class="utility-bar">
+      <a href="form.html">Sign in</a>
+      <a href="tel:+78001234567">Product Support</a>
+      <a href="index.html#customers">Company</a>
+      <a href="mailto:hello@example.com">Contact us</a>
+      <span lang="en">English</span>
+    </p>
+
+    <nav aria-label="Основная навигация">
+      <a href="index.html" class="logo">Zendesk</a>
+      <ul>
+        <li><a href="index.html#messaging">Products</a></li>
+        <li><a href="index.html#cta-trial">Pricing</a></li>
+        <li><a href="index.html#conversations">Solutions</a></li>
+        <li><a href="form.html">Demo</a></li>
+        <li><a href="index.html#customize">Services</a></li>
+        <li><a href="index.html#blog">Resources</a></li>
+      </ul>
+      <a href="form.html" class="button">Get started</a>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <section aria-labelledby="signup-heading">
+      <h1 id="signup-heading">Create your Zendesk account</h1>
+      <p class="lead">Start a free 14-day trial. Fields marked with <abbr title="required">*</abbr> are required.</p>
+
+      <form class="signup-form" action="https://httpbin.org/post" method="post">
+        <fieldset>
+          <legend>Personal information</legend>
+
+          <div class="field">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" placeholder="Ivan Petrov" autocomplete="name" minlength="2" required>
+          </div>
+
+          <div class="field">
+            <label for="birth-date">Date of birth</label>
+            <input type="date" id="birth-date" name="birth_date" min="1920-01-01" max="2012-12-31">
+          </div>
+
+          <fieldset class="choice">
+            <legend>Gender *</legend>
+            <div class="choice-item">
+              <input type="radio" id="gender-male" name="gender" value="male" required>
+              <label for="gender-male">Male</label>
+            </div>
+            <div class="choice-item">
+              <input type="radio" id="gender-female" name="gender" value="female">
+              <label for="gender-female">Female</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" minlength="8" aria-describedby="password-hint" required>
+            <p class="hint" id="password-hint">Use 8 or more characters with letters and numbers.</p>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact details</legend>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 999 123-45-67" autocomplete="tel" pattern="\+?[0-9\s\(\)\-]{10,20}">
+          </div>
+
+          <fieldset class="choice">
+            <legend>Best time to contact you</legend>
+            <div class="choice-item">
+              <input type="checkbox" id="contact_time-morning" name="contact_time" value="morning">
+              <label for="contact_time-morning">Morning, 9–12</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="contact_time-afternoon" name="contact_time" value="afternoon">
+              <label for="contact_time-afternoon">Afternoon, 12–17</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="contact_time-evening" name="contact_time" value="evening">
+              <label for="contact_time-evening">Evening, 17–21</label>
+            </div>
+            <div class="choice-item">
+              <input type="checkbox" id="contact_time-night" name="contact_time" value="night">
+              <label for="contact_time-night">Night, 21–9</label>
+            </div>
+          </fieldset>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="button button-primary"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><circle cx="9" cy="8" r="4"/><path d="M19 8v6M16 11h6"/></svg>Create account</button>
+          <button type="reset" class="button button-secondary"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 3v6h6"/></svg>Clear form</button>
+          <button type="button" class="button button-secondary" disabled><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v7M14 20h3"/></svg>Sign up with QR code (soon)</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <nav aria-label="Футер">
+      <div class="footer-column">
+        <h2>Our Products</h2>
+        <ul>
+          <li><a href="#">Zendesk for service</a></li>
+          <li><a href="#">Zendesk for sales</a></li>
+          <li><a href="#">Platform and APIs</a></li>
+          <li><a href="#">Marketplace</a></li>
+          <li><a href="#">Product updates</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Top Features</h2>
+        <ul>
+          <li><a href="#">Ticketing system</a></li>
+          <li><a href="#">Messaging &amp; live chat</a></li>
+          <li><a href="#">Reporting &amp; analytics</a></li>
+          <li><a href="#">Voice</a></li>
+          <li><a href="#">Help center</a></li>
+          <li><a href="#">Community forums</a></li>
+          <li><a href="#">Customer service software</a></li>
+          <li><a href="#">Ticketing system software</a></li>
+          <li><a href="#">Live chat software</a></li>
+          <li><a href="#">Knowledge base</a></li>
+          <li><a href="#">Forum software</a></li>
+          <li><a href="#">Help desk software</a></li>
+          <li><a href="#">Security</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="#">Product support</a></li>
+          <li><a href="form.html">Request a demo</a></li>
+          <li><a href="#">The Library</a></li>
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Webinars</a></li>
+          <li><a href="#">Customer Stories</a></li>
+          <li><a href="#">Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Diversity &amp; Inclusion</a></li>
+          <li><a href="#">Social Impact</a></li>
+          <li><a href="mailto:hello@example.com">Contact us</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">System status</a></li>
+          <li><a href="#">Product help</a></li>
+          <li><a href="#">Legal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h2>Favorite Things</h2>
+        <ul>
+          <li><a href="#">Zendesk for Enterprise</a></li>
+          <li><a href="#">Zendesk for Small Business</a></li>
+          <li><a href="#">Zendesk for Startups</a></li>
+          <li><a href="#">Zendesk Benchmark</a></li>
+          <li><a href="#">Gartner CRM Magic Quadrant</a></li>
+          <li><a href="#">Customer Experience Trends</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr>
+
+    <form action="https://httpbin.org/get" method="get">
+      <h2>Enter the fold</h2>
+      <p>Subscribe to our newsletter.</p>
+      <label for="newsletter-email">Your email</label>
+      <input type="email" id="newsletter-email" name="email" placeholder="What's your email?" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p class="legal-links">
+      <span>©Zendesk 2021</span>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </p>
+
+    <p class="disclaimer">
+      Gartner, Critical Capabilities for the CRM Customer Engagement Center,
+      8 June 2020, Nadine LeBlanc, Brian Manusama
+    </p>
+    <p class="disclaimer">
+      Gartner does not endorse any vendor, product or service depicted in
+      its research publications and does not advise technology users to
+      select only those vendors with the highest ratings or other
+      designations. Gartner research publications consist of the opinions
+      of Gartner's Research &amp; Advisory organization and should not be
+      construed as statements of fact. Gartner disclaims all warranties,
+      expressed or implied, with respect to this research, including any
+      warranties of merchantability or fitness for particular purpose.
+      GARTNER is a registered trademark and service mark of Gartner, Inc.
+      and/or its affiliates in the U.S. and internationally and is used
+      herein with permissions. All rights reserved.
+    </p>
+  </footer>
+</body>
+</html>
