@@ -30,7 +30,7 @@
   --color-line-light: rgba(255, 255, 255, 0.2);
   --color-text-muted: hsla(180, 8%, 97%, 0.7);
   --radius-sm: 4px;
-  --radius-lg: 1.625rem;
+  --radius-lg: 0rem;
   --content-width: 70rem;
   --gutter: 1.5rem;
 }
@@ -215,7 +215,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   font-size: 0.8125rem;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: flex-end;
   margin: 0;
   padding: 0.5rem max(var(--gutter), calc((100% - var(--content-width)) / 2));
@@ -239,7 +239,7 @@ header nav {
 
 header nav ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 3rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -296,11 +296,11 @@ main > section {
   min-height: 70vh;
   padding-bottom: 4rem;
   padding-top: 4rem;
-  text-align: center;
+  text-align: left;
 }
 
 #hero figure {
-  margin: 2rem auto 0;
+  margin: 3rem auto 0;
   max-width: 20rem;
 }
 
@@ -308,11 +308,15 @@ main > section {
 #hero p {
   color: var(--color-white);
 }
+#hero h1 {
+  text-align: left;
+}
 
 #hero p {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60ch;
+  text-align: left;
+  margin-left:  auto;
+  margin-right: 30rem auto;
+  max-width: 50ch;
 }
 
 .actions {
